@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Податковий календар</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_detail_event">Подробности</string>
+    <string name="decree_label">Нормативный акт</string>
+    <string name="penalty_label">Штрафы</string>
+</resources>
