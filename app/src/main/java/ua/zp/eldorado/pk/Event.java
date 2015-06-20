@@ -3,6 +3,9 @@ package ua.zp.eldorado.pk;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Event model
  * Created by xazan on 19.06.2015.
@@ -58,6 +61,32 @@ public class Event implements Parcelable {
         this.description = description;
         this.decree = decree;
     }
+
+    public Event(JSONObject object) {
+        try {
+            this.date = object.getString("date");
+            this.type = object.getString("type");
+            this.name = object.getString("name");
+            this.description = object.getString("description");
+            this.decree = object.getString("decree");
+            this.penalty = object.getString("penalty");
+            this.regulations = object.getString("regulations");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+//    public static ArrayList<Event> fromJson(JSONArray jsonArray) {
+//        ArrayList<Event> events = new ArrayList<Event>();
+//        for (int i = 0; i < jsonArray.length(); i++) {
+//            try {
+//                events.add(new Event(jsonArray.getJSONObject(i)));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return events;
+//    }
 
     public String getDate() {
         return date;
